@@ -1,0 +1,42 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Virtual environment
+.venv/
+venv/
+env/
+
+# IDE / Editor
+.vscode/
+.idea/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Datasets
+Train/
+Test/
+
+# Model checkpoints
+*.pth
+*.pt
+*.ckpt
+
+# Python/Jupyter
+.ipynb_checkpoints/
+
+# Temporary files
+*.tmp
+*.temp
+
+# Experiment outputs
+outputs/*.png
+outputs/*.csv
+outputs/*.txt
+outputs/*.pth
+
+# Keep final submission
+!outputs/submission.csv
