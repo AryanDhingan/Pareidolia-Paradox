@@ -218,10 +218,10 @@ Input [2 x 256 x 256]
 | Precision | Automatic Mixed Precision (AMP) |
 | Loss Function | `BCEWithLogitsLoss` with class-imbalance positive weight |
 
-The positive weight compensates for the Rise-heavy class distribution:
+The positive weight (`pos_weight` in PyTorch) compensates for the Rise-heavy class distribution:
 
 $$
-\text{pos\_weight} = \frac{2854}{5000} = 0.570800
+w_{\text{pos}} = \frac{2854}{5000} = 0.570800
 $$
 
 ### Data Augmentation
@@ -437,7 +437,7 @@ python inference.py
 
 Trained model checkpoints are hosted externally.
 
-- **Download Link:** [Final Model Weights — Add Public Download Link Here]
+- **Download Link:** [Download Final Model Weights](https://drive.google.com/file/d/1j9VAAi2YInKcv9QpqW9twX0fGG7bv8Em/view?usp=sharing)
 - **Destination Path:** `outputs/final_physics_model.pth`
 
 ---
