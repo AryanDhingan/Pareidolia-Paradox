@@ -379,14 +379,16 @@ Pareidolia-Paradox/
 
 ### Installation
 
-**1. Clone the repository**
+## 1. Clone the Repository
 
 ```bash
 git clone https://github.com/AryanDhingan/Pareidolia-Paradox.git
 cd Pareidolia-Paradox
 ```
 
-**2. Set up a virtual environment**
+## 2. Create a Virtual Environment
+
+**Windows:**
 
 ```bash
 python -m venv .venv
@@ -394,16 +396,72 @@ python -m venv .venv
 
 Activate it:
 
-- **Windows (PowerShell):** `.venv\Scripts\Activate.ps1`
-- **Linux / macOS:** `source .venv/bin/activate`
+```bash
+.venv\Scripts\activate
+```
 
-**3. Install dependencies**
+## 3. Install PyTorch
+
+The final model was developed and tested with:
+
+- Python 3.10.11
+- PyTorch 2.14.0 + CUDA 13.0
+- Torchvision 0.29.0 + CUDA 13.0
+
+For the CUDA 13.0 build:
+
+```bash
+pip install torch==2.14.0+cu130 torchvision==0.29.0+cu130 --index-url https://download.pytorch.org/whl/cu130
+```
+
+For CPU-only inference, install a compatible CPU build of PyTorch and torchvision instead.
+
+## 4. Install Remaining Dependencies
 
 ```bash
 pip install -r requirements.txt
 ```
 
-> Ensure CUDA-enabled PyTorch builds are installed if GPU execution is desired.
+---
+
+# Inference
+
+Before running inference, make sure the evaluation dataset is available at:
+
+```text
+Test/
+├── eval_images/
+└── test_metadata.csv
+```
+
+Download the final trained model:
+[Download Final Model Weights](https://drive.google.com/file/d/1j9VAAi2YInKcv9QpqW9twX0fGG7bv8Em/view?usp=sharing)
+
+Place the downloaded checkpoint at:
+
+```text
+outputs/final_physics_model.pth
+```
+
+Then run:
+
+```bash
+python inference.py
+```
+
+The script performs the complete preprocessing and inference pipeline and generates:
+
+```text
+outputs/submission.csv
+```
+
+The generated submission contains exactly the columns:
+
+```text
+image_id,label
+```
+
+for all 2,000 evaluation images.
 
 ### Dataset Setup
 

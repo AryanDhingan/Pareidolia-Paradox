@@ -1,7 +1,5 @@
-torch
-torchvision
-numpy
-pandas
-opencv-python
-scikit-learn
-albumentations
+numpy==2.2.6
+pandas==2.3.3
+opencv-python==5.0.0.93
+scikit-learn==1.7.2
+albumentations==2.0.8
